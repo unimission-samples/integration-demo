@@ -1,9 +1,3 @@
-trigger:
-- main
-
-pool:
-  vmImage: 'ubuntu-latest'
-
 steps:
 - task: AzureResourceGroupDeployment@2
   inputs:
@@ -11,3 +5,4 @@ steps:
     resourceGroupName: 'rg-azconfig-tryout-switzerlandnorth-001'
     location: 'switzerlandnorth'
     csmFile: 'deployment.json'
+    overrideParameters: '-adminUsername adm.bb -adminPasswordOrKey $(adminPassword)'
