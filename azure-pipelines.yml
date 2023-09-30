@@ -1,0 +1,13 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: AzureResourceGroupDeployment@2
+  inputs:
+    azureSubscription: 'mg-unm-it-int-dev-01'
+    resourceGroupName: 'rg-azconfig-tryout-switzerlandnorth-001'
+    location: 'switzerlandnorth'
+    csmFile: 'deployment.json'
