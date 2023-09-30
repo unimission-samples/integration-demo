@@ -1,0 +1,187 @@
+{
+  "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Resources/deployments/Microsoft.Template-20230930152112",
+  "name": "Microsoft.Template-20230930152112",
+  "type": "Microsoft.Resources/deployments",
+  "properties": {
+    "templateLink": {
+      "uri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/quickstarts/microsoft.compute/vm-simple-linux/azuredeploy.json",
+      "contentVersion": "1.0.0.0"
+    },
+    "templateHash": "11453007703022839041",
+    "parameters": {
+      "vmName": {
+        "type": "String",
+        "value": "simpleLinuxVM"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "adm.bb"
+      },
+      "authenticationType": {
+        "type": "String",
+        "value": "password"
+      },
+      "adminPasswordOrKey": {
+        "type": "SecureString"
+      },
+      "dnsLabelPrefix": {
+        "type": "String",
+        "value": "simplelinuxvm-iufgt3gmh5pyu"
+      },
+      "ubuntuOSVersion": {
+        "type": "String",
+        "value": "Ubuntu-2004"
+      },
+      "location": {
+        "type": "String",
+        "value": "switzerlandnorth"
+      },
+      "vmSize": {
+        "type": "String",
+        "value": "Standard_D2s_v3"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "vNet"
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "Subnet"
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "SecGroupNet"
+      },
+      "securityType": {
+        "type": "String",
+        "value": "TrustedLaunch"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Running",
+    "timestamp": "2023-09-30T13:21:25.5686651Z",
+    "duration": "PT11.2843332S",
+    "correlationId": "45b445fa-de20-4f1e-92f9-c9f2516e2ca4",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks/subnets",
+            "locations": [
+              null
+            ]
+          },
+          {
+            "resourceType": "publicIPAddresses",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          },
+          {
+            "resourceType": "virtualMachines/extensions",
+            "locations": [
+              "switzerlandnorth"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/networkSecurityGroups/SecGroupNet",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "SecGroupNet"
+          },
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/publicIPAddresses/simpleLinuxVMPublicIP",
+            "resourceType": "Microsoft.Network/publicIPAddresses",
+            "resourceName": "simpleLinuxVMPublicIP"
+          },
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/virtualNetworks/vNet/subnets/Subnet",
+            "resourceType": "Microsoft.Network/virtualNetworks/subnets",
+            "resourceName": "vNet/Subnet"
+          }
+        ],
+        "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/networkInterfaces/simpleLinuxVMNetInt",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "simpleLinuxVMNetInt"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/virtualNetworks/vNet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "vNet"
+          }
+        ],
+        "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/virtualNetworks/vNet/subnets/Subnet",
+        "resourceType": "Microsoft.Network/virtualNetworks/subnets",
+        "resourceName": "vNet/Subnet"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Network/networkInterfaces/simpleLinuxVMNetInt",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "simpleLinuxVMNetInt"
+          }
+        ],
+        "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "simpleLinuxVM"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM",
+            "resourceType": "Microsoft.Compute/virtualMachines",
+            "resourceName": "simpleLinuxVM"
+          }
+        ],
+        "id": "/subscriptions/6873a57f-3acb-44ce-a349-ec47e5ea0efa/resourceGroups/rg-azconfig-tryout-switzerlandnorth-001/providers/Microsoft.Compute/virtualMachines/simpleLinuxVM/extensions/GuestAttestation",
+        "resourceType": "Microsoft.Compute/virtualMachines/extensions",
+        "resourceName": "simpleLinuxVM/GuestAttestation"
+      }
+    ],
+    "validationLevel": "Template"
+  },
+  "tags": {
+    "marketplaceItemId": "Microsoft.Template"
+  }
+}
